@@ -1,0 +1,14 @@
+.footer {
+    background-color: white;
+    padding: var(--spacing-lg) 0;
+    margin-top: auto;
+    /* Push to bottom if using flex column layout */
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    color: var(--color-text);
+    font-size: 0.9rem;
+}
+
+.footer p {
+    margin: 0;
+    opacity: 0.7;
+}

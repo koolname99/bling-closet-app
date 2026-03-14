@@ -1,0 +1,51 @@
+.hero-section {
+    background: transparent;
+    padding: 0;
+    margin-bottom: var(--spacing-xl);
+}
+
+.hero-banner-container {
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    line-height: 0;
+    /* Remove potential gap below image */
+}
+
+.hero-banner {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.section-title {
+    color: var(--color-secondary);
+    font-size: 2rem;
+    margin-bottom: var(--spacing-lg);
+    position: relative;
+    display: inline-block;
+}
+
+.section-title::after {
+    content: '';
+    display: block;
+    width: 50%;
+    height: 3px;
+    background-color: var(--color-primary);
+    margin: 5px auto 0;
+    border-radius: 2px;
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-xl);
+}
+
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: var(--spacing-md);
+    margin-bottom: var(--spacing-xl);
+}
