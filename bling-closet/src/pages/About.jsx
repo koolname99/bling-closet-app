@@ -8,13 +8,20 @@ const About = () => {
                 <p style={{ fontSize: '1.1rem', marginBottom: '1rem' }}>
                     Welcome to <strong>Bling Closet</strong>!
                 </p>
+
+                <p style={{ lineHeight: '1.8' }}>
+                    🎀 Available in big size<br />
+                    ❤️ Order items from Shopee & Taobao<br />
+                    🌸 All items are pre-order<br />
+                    ✈️ Shipping all states<br />
+                    📍 Pick up Dallas, TX
+                </p>
                 <p>
                     Established in 2024, we bring you the cutest and most stylish fashion items.
                     Our mission is to make you shine with our curated collection of pink and lovely outfits.
                 </p>
                 <p>
-                    Thank you for choosing us to be a part of your wardrobe!
-                </p>
+                    Thank you for choosing us to be a part of your wardrobe!             </p>
             </div>
         </div>
     );

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 import ProductCard from '../components/ProductCard';
 import API_URL from '../config/api';
 
@@ -19,6 +20,11 @@ const Products = () => {
                 {products.map(product => (
                     <ProductCard key={product._id} product={product} />
                 ))}
+            </div>
+            <div className="text-center" style={{ marginTop: '3rem' }}>
+                <Link to="/" className="buy-button" style={{ display: 'inline-block', textDecoration: 'none', padding: '0.5rem 2rem', width: 'auto' }}>
+                    Back
+                </Link>
             </div>
         </div>
     );
