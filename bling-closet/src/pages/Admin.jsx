@@ -15,6 +15,8 @@ function Admin() {
   const [loading, setLoading] = useState(false);
   const [message, setMessage] = useState({ type: '', text: '' });
   const [editingId, setEditingId] = useState(null);
+  const [password, setPassword] = useState('');
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   // Fetch existing items on load
   useEffect(() => {
@@ -88,7 +90,8 @@ function Admin() {
       const url = isEditing ? `${API_URL}/api/items/${editingId}` : `${API_URL}/api/items`;
       const method = isEditing ? 'PUT' : 'POST';
 
-      const res = await fetch(url, { method, body: data });
+      const headers = { 'x-admin-password': password };
+      const res = await fetch(url, { method, body: data, headers });
 
       if (!res.ok) {
         const error = await res.json();
@@ -119,7 +122,8 @@ function Admin() {
     }
 
     try {
-      const res = await fetch(`${API_URL}/api/items/${id}`, { method: 'DELETE' });
+      const headers = { 'x-admin-password': password };
+      const res = await fetch(`${API_URL}/api/items/${id}`, { method: 'DELETE', headers });
       if (!res.ok) throw new Error('Failed to delete item');
 
       setItems(items.filter((item) => item._id !== id));
@@ -133,6 +137,28 @@ function Admin() {
       setMessage({ type: 'error', text: error.message });
     }
   };
+
+  if (!isAuthenticated) {
+    return (
+      <div className="admin-page" style={{ textAlign: 'center', paddingTop: '4rem' }}>
+        <h1>🔒 Admin Access</h1>
+        <div className="upload-form" style={{ maxWidth: '400px', margin: '2rem auto' }}>
+          <div className="form-group">
+            <input 
+              type="password" 
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              placeholder="Enter Admin Password"
+              onKeyDown={(e) => e.key === 'Enter' && setIsAuthenticated(true)}
+            />
+          </div>
+          <button className="submit-btn" onClick={() => setIsAuthenticated(true)}>
+            Unlock Admin Panel
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="admin-page">
