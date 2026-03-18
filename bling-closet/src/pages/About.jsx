@@ -5,23 +5,12 @@ const About = () => {
         <div className="container" style={{ padding: '4rem 1rem' }}>
             <h1 className="text-center" style={{ color: 'var(--color-secondary)' }}>About Us</h1>
             <div style={{ maxWidth: '800px', margin: '0 auto', textAlign: 'center' }}>
-                <p style={{ fontSize: '1.1rem', marginBottom: '1rem' }}>
-                    Welcome to <strong>Bling Closet</strong>!
-                </p>
-
-                <p style={{ lineHeight: '1.8' }}>
-                    🎀 Available in big size<br />
-                    ❤️ Order items from Shopee & Taobao<br />
-                    🌸 All items are pre-order<br />
-                    ✈️ Shipping all states<br />
-                    📍 Pick up Dallas, TX
+                <p>
+                    Meet Bling! We are your trusted fashion companion, bringing you unique and high quality products from local brands in Vietnam and China. At Bling, we believe everyone deserves a touch of sparkle in their everyday life.
+                    Also, we provide a service to help you place orders from Shopee & Taobao, making it easier for you to get your favorite items.
                 </p>
                 <p>
-                    Established in 2024, we bring you the cutest and most stylish fashion items.
-                    Our mission is to make you shine with our curated collection of pink and lovely outfits.
-                </p>
-                <p>
-                    Thank you for choosing us to be a part of your wardrobe!             </p>
+                    Let's Bling up together ✨</p>
             </div>
         </div>
     );
